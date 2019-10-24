@@ -1,6 +1,6 @@
 # PROJECT NAME
-![pipeline](https://gitlab.scalian.com/<projetc_path>/badges/develop/pipeline.svg)
-![coverage](https://gitlab.scalian.com/<projetc_path>/badges/develop/coverage.svg)
+![pipeline](https://github.com/<projetc_path>/badges/develop/pipeline.svg)
+![coverage](https://github.com/<projetc_path>/badges/develop/coverage.svg)
 
 *Project description*
 
