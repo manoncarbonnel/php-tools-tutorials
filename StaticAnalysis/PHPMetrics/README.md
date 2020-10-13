@@ -2,44 +2,44 @@
 
 ![Standard report](https://github.com/phpmetrics/PhpMetrics/raw/master/doc/overview.png)
 
-[Voir la documentation complète](https://github.com/phpmetrics/PhpMetrics)
+[See full documentation](https://github.com/phpmetrics/PhpMetrics)
 
-PhpMetrics fournit des métriques sur le projet et les classes PHP, avec un rapport HTML stylisé et lisible.
+PhpMetrics provides metrics about PHP project and classes, with beautiful and readable HTML report.
 
-**Sommaire**
+**Summary**
 
-- [Pré-requis](#pre-requis)
-- [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Install](#install)
     - [PhpStorm](#phpstorm)
-- [Lancement](#lancement)
+- [Usage](#usage)
 
-## Pré-requis
+## Prerequisites
 
-Pour installer ces outils, vous aurez besoin de :
-- La librairie PHP >= 5.6
-    - soit en local votre machine à l'aide d'un [exécutable](https://www.php.net/downloads.php)
-    - soit celui d'un conteneur Docker
+To install those tools, you will need:
+- PHP library >= 5.6
+    - [local](https://www.php.net/downloads.php)
+    - from a Docker container
 - [Git](https://git-scm.com/)
 - [Composer](https://getcomposer.org/)
 
-## Installation
+## Install
 
 ``` shell
 composer global require phpmetrics/phpmetrics
 ```
 
-Composer installera l'exécutable de PHP Metrics dans `vendor/bin`.
+Composer will install PHP Metrics in `vendor/bin`.
 
 ### PhpStorm
 
-Le plugin [PhpMetrics](https://plugins.jetbrains.com/plugin/7500-phpmetrics) pour l'IDE Jetbrains PhpStorm permet de lancer l'analyse du code directement dans l'IDE.
+The [PhpMetrics plugin](https://plugins.jetbrains.com/plugin/7500-phpmetrics) for the Jetbrains PhpStorm IDE allows you to launch the code analysis directly in the IDE.
 
-## Lancement
+## Usage
 
 ``` shell
 vendor/bin/phpmetrics --report-html=myreport src
 ```
 
-**avec le plugin PhpStorm**
+**with PhpStorm plugin**
 
-Dans le menu `Code > Run PhpMetrics on selected folder` cela ouvrire un rapport html dans un nouvel onglet du navigateur par défaut.
+Select `Code > Run PhpMetrics on selected folder` this will open an html report in a new tab of the default browser.

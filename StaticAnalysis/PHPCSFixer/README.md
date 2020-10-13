@@ -1,43 +1,43 @@
 # PHP Coding Standards Fixer
 
-[Voir la documentation complète](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+[See full documentation](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
 
-L'outil PHP Coding Standards Fixer (PHP CS Fixer) corrige le code pour qu'il respecte des standards; que ce soient les standards de codage PHP telles que définies dans le PSR-1, le PSR-2, etc., ou d’autres règles telles que celles de Symfony, gérées par la communauté. Toutes les règles sont personnalisables.
+The PHP Coding Standards Fixer (PHP CS Fixer) tool fixes your code to follow standards; whether you want to follow PHP coding standards as defined in the PSR-1, PSR-2, etc., or other community driven ones like the Symfony one. You can also define your (team's) style through configuration.
 
-Il peut moderniser le code et l’optimiser.
+It can modernize your code (like converting the pow function to the ** operator on PHP 5.6) and (micro) optimize it.
 
-Si vous utilisez déjà un linter pour identifier les problèmes de standards de codage dans votre code, vous savez que les résoudre à la main est fastidieux, en particulier pour les grands projets. Cet outil ne les détecte pas seulement, mais les corrige également pour vous.
+If you are already using a linter to identify coding standards problems in your code, you know that fixing them by hand is tedious, especially on large projects. This tool does not only detect them, but also fixes them for you.
 
-**Sommaire**
+**Summary**
 
-- [Pré-requis](#pre-requis)
-- [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Install](#install)
 - [Configuration](#configuration)
     - [PhpStorm](#phpstorm)
-- [Lancement](#lancement)
+- [Usage](#usage)
 
-## Pré-requis
+## Prerequisites
 
-Pour installer ces outils, vous aurez besoin de :
-- La librairie PHP >= 5.6
-    - soit en local votre machine à l'aide d'un [exécutable](https://www.php.net/downloads.php)
-    - soit celui d'un conteneur Docker
+To install those tools, you will need:
+- PHP library >= 5.6
+    - [local](https://www.php.net/downloads.php)
+    - from a Docker container
 - [Git](https://git-scm.com/)
 - [Composer](https://getcomposer.org/)
 
-## Installation
+## Install
 
 ``` shell
 composer global require friendsofphp/php-cs-fixer
 ```
 
-Composer installera l'exécutable de PHPCS Fixer dans `vendor/bin`.
+Composer will install PHPCS Fixer in `vendor/bin`.
 
 ## Configuration
 
-La configuration de PHPCS Fixer se fait dans le fichier `.php_cs.dist`
+The configuration of PHPCS Fixer is located in the file `.php_cs.dist`
 
-[Une liste complète des règles avec exemple dynamiques](https://mlocati.github.io/php-cs-fixer-configurator/#version:2.15) a été faite par la communauté mais est aussi disponible sur la [documentation officielle](https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage).
+[A complete list of rules with dynamic example](https://mlocati.github.io/php-cs-fixer-configurator/#version:2.15) was made by the community but is also available on the [official documentation](https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage).
 
 ``` php
 <?php
@@ -127,34 +127,35 @@ return PhpCsFixer\Config::create()
 
 ### PhpStorm
 
-Voir la [documentation officielle](https://www.jetbrains.com/help/phpstorm/using-php-cs-fixer.html) pour intégrer PHP Coding Standards Fixer à l'IDE Jetbrains PhpStorm.
+See [full documentation](https://www.jetbrains.com/help/phpstorm/using-php-cs-fixer.html) to integrate PHP Code Sniffer into Jetbrains PhpStorm IDE.
 
 #### Quality tools
 
-Dans `Settings > Languages & Frameworks > PHP > Quality Tools > PHP CS Fixer > Local`
+In `Settings > Languages & Frameworks > PHP > Quality Tools > PHP CS Fixer > Local`
 
-Indiquer *PHP CS Fixer path* : `C:\Users\username\AppData\Roaming\Composer\vendor\bin\php-cs-fixer.bat`
+Indicate *PHP CS Fixer path*: `C:\Users\username\AppData\Roaming\Composer\vendor\bin\php-cs-fixer.bat`
 
 #### Editor inspections configuration
 
-Dans `Settings > Editor > Inspection`
+In `Settings > Editor > Inspection`
 
-Selectionner : `PHP > Quality Tools`
-Cocher `PHP CS Fixer validation`
+Select: `PHP > Quality Tools`
+
+Check `PHP CS Fixer validation`
 
 #### External tool
 
-En installant les outils en global sur une machine de dev, il est possible de créer un [external tool](https://www.jetbrains.com/help/phpstorm/settings-tools-external-tools.html) dans PHPStorm
+By installing the tools globally on a development machine, it is possible to create an [external tool](https://www.jetbrains.com/help/phpstorm/settings-tools-external-tools.html) in PHPStorm
 
-Dans `Settings>Tools>External Tools`, créer un nouvel outil avec comme settings :
+In `Settings>Tools>External Tools`, create a new tool with the following settings:
 
-| Clé | Valeur |
+| Key | Value |
 | ------ | ------ |
 | Program | C:\Users\username\AppData\Roaming\Composer\vendor\bin\php-cs-fixer.bat |
 | Arguments | --verbose --config=$ProjectFileDir$\src\.php_cs.dist fix |
 | Working directory | $ProjectFileDir$ |
 
-## Lancement
+## Usage
 
 ``` shell
 vendor/bin/php-cs-fixer --verbose --config=$ProjectFileDir$\src\.php_cs.dist fix

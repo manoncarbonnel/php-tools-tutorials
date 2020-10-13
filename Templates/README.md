@@ -14,7 +14,7 @@
   - [Dependencies install](#dependencies-install)
   - [Data import](#data-import)
   - [Source files](#source-files)
-- [Environnement](#environnement)
+- [Environment](#environment)
   - [Code quality](#code-quality)
   - [PHP commands usage](#php-commands-usage)
 - [Running the tests](#running-the-tests)
@@ -35,7 +35,7 @@ You can plug any of this tools to your favourite IDE.
 
 ## Prerequisites
 
-You need to have the following softwares installed on your local machine :
+You need to have the following softwares installed on your local machine:
 - [Docker for windows](https://docs.docker.com/docker-for-windows/)
 - [Git](https://git-scm.com/)
 - Windows PowerShell
@@ -55,11 +55,11 @@ git clone git@github.com
 
 ### Docker compose usage
 
-- Run / init : `docker-compose up`
-- Stop : `docker-compose stop`
-- Destroy : `docker-compose down`
-- Cleanup : `docker-compose rm -vsf`
-- Reset :  `docker system prune -af --volumes`
+- Run / init: `docker-compose up`
+- Stop: `docker-compose stop`
+- Destroy: `docker-compose down`
+- Cleanup: `docker-compose rm -vsf`
+- Reset:  `docker system prune -af --volumes`
 
 ### Dependencies install
 
@@ -75,14 +75,14 @@ We use *name and link to the SGBDR documentation* for this project.
 
 *Explain where your source code is located*
 
-## Environnement
+## Environment
 
 ### Code quality
 
-We use code quality tools which you can plug in your favourite IDE :
+We use code quality tools which you can plug in your favourite IDE:
 
 *List which code quality tools are used and mandatory in this project*
-*For each tool : name, link to documentation and path to the associated config file*
+*For each tool: name, link to documentation and path to the associated config file*
 
 ## PHP commands usage
 
@@ -126,14 +126,14 @@ docker-compose exec backend vendor/behat/behat/bin/behat --config behat.yml.dist
 ## Built With
 
 *List which code and test frameworks and libraries are used in this project*
-*For each one : name and link to documentation*
+*For each one: name and link to documentation*
 
 ![Symfony](https://symfony.com/images/logos/header-logo.svg)
 
 - [Symfony](https://symfony.com) & [API Platform](https://symfony.com) - PHP Framework
 - [MySQL](https://www.mysql.com/) - SGBDR
 - [PHP Unit](https://phpunit.readthedocs.io/) & [Prophecy](https://github.com/phpspec/prophecy) - Unit tests framework
-- [Behat](https://behat.org/) - Functionnal tests framework
+- [Behat](https://behat.org/) - Functional tests framework
 - [Composer](https://getcomposer.org/) - Dependency management
 - [Docker](https://www.docker.com/) - Virtualization and container management
 

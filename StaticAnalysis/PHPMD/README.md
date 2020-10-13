@@ -1,43 +1,43 @@
 # PHP Mess Detector
 
-[Voir la documentation complète](https://github.com/phpmd/phpmd)
+[See full documentation](https://github.com/phpmd/phpmd)
 
-PHP Mess Detector se concentre sur la complexité et la recherche d’erreurs dans le code sans l’exécuter.
+PHP Mess Detector focuses on complexity and finding errors in code without executing it.
 
-**Sommaire**
+**Summary**
 
-- [Pré-requis](#pre-requis)
-- [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Install](#install)
 - [Configuration](#configuration)
     - [PhpStorm](#phpstorm)
       - [Quality tools](#quality-tools)
       - [Editor inspections configuration](#editor-inspections-configuration)
       - [External tool](#external-tool)
-- [Lancement](#lancement)
+- [Usage](#usage)
 
-## Pré-requis
+## Prerequisites
 
-Pour installer ces outils, vous aurez besoin de :
-- La librairie PHP
-    - soit en local votre machine à l'aide d'un [exécutable](https://www.php.net/downloads.php)
-    - soit celui d'un conteneur Docker
+To install those tools, you will need:
+- PHP library
+    - [local](https://www.php.net/downloads.php)
+    - from a Docker container
 - [Git](https://git-scm.com/)
 - [Composer](https://getcomposer.org/)
 
-Cet outil est [nativement compatibles](https://www.jetbrains.com/help/phpstorm/php-code-quality-tools.html) avec un IDE :
+This tool is [already built-in](https://www.jetbrains.com/help/phpstorm/php-code-quality-tools.html) an IDE:
 - [PhpStorm](https://www.jetbrains.com/phpstorm/)
 
-## Installation
+## Install
 
 ``` shell
 composer global require phpmd/phpmd
 ```
 
-Composer installera l'exécutable de PHP Mess Detector dans `vendor/bin`.
+Composer will install PHP Mess Detector in `vendor/bin`.
 
 ## Configuration
 
-La configuration de PHP MD se fait dans le fichier `phpmd_ruleset.xml`
+The configuration of PHP MD is located in the file `phpmd_ruleset.xml`
 
 ``` xml
 <?xml version="1.0"?>
@@ -76,34 +76,35 @@ La configuration de PHP MD se fait dans le fichier `phpmd_ruleset.xml`
 
 ### PhpStorm
 
-Voir la [documentation officielle](https://www.jetbrains.com/help/phpstorm/using-php-mess-detector.html) pour intégrer PHP Mess Detector à l'IDE Jetbrains PhpStorm.
+See [full documentation](https://www.jetbrains.com/help/phpstorm/using-php-mess-detector.html) to integrate PHP Mess Detector into Jetbrains PhpStorm IDE.
 
 #### Quality tools
 
-Dans `Settings > Languages & Frameworks > PHP > Quality Tools > Mess Detector > Local`
+In `Settings > Languages & Frameworks > PHP > Quality Tools > Mess Detector > Local`
 
-Indiquer *PHP Mess Detector path* : `C:\Users\username\AppData\Roaming\Composer\vendor\bin\phpmd.bat`
+Indicate *PHP Mess Detector path*: `C:\Users\username\AppData\Roaming\Composer\vendor\bin\phpmd.bat`
 
 #### Editor inspections configuration
 
-Dans `Settings > Editor > Inspection`
+In `Settings > Editor > Inspection`
 
-Selectionner : `PHP > Quality Tools`
-Cocher `PHP Mess Detector validation`
+Select: `PHP > Quality Tools`
+
+Check `PHP Mess Detector validation`
 
 #### External tool
 
-En installant les outils en global sur une machine de dev, il est possible de créer un [external tool](https://www.jetbrains.com/help/phpstorm/settings-tools-external-tools.html) dans PHPStorm
+By installing the tools globally on a development machine, it is possible to create an [external tool](https://www.jetbrains.com/help/phpstorm/settings-tools-external-tools.html) in PHPStorm
 
-Dans `Settings > Tools > External Tools`, créer un nouvel outil avec comme settings :
+In `Settings > Tools > External Tools`, create a new tool with the following settings:
 
-| Clé | Valeur |
+| Key | Value |
 | ------ | ------ |
 | Program | C:\Users\username\AppData\Roaming\Composer\vendor\bin\phpmd.bat |
 | Arguments | $ProjectFileDir$/src text phpmd_ruleset.xml --exclude bin,features,tests,var,vendor |
 | Working directory | $ProjectFileDir$ |
 
-## Lancement
+## Usage
 
 ``` shell
 vendor/bin/phpmd $ProjectFileDir$/src text phpmd_ruleset.xml --exclude bin,features,tests,var,vendor

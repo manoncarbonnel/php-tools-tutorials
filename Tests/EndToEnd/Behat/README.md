@@ -1,13 +1,13 @@
 ![Behat](https://github.com/Behat/logo/raw/master/logo.png)
 
-Behat is a functionnal (end-to-end) test framework.
+Behat is a functional (end-to-end) test framework.
 Based on [Behaviour Driven Design](https://fr.wikipedia.org/wiki/Programmation_pilot%C3%A9e_par_le_comportement), with tests written in [Gherkin](https://cucumber.io/docs/gherkin/) and contexts (steps) written in PHP.
 
 Tests are written according to the GWT (Given-When-Then) pattern.
 
 Pre written contexts, [Behatch](https://github.com/Behatch/contexts) are available.
 
-**Sommaire**
+**Summary**
 
 - [Prerequisites](#prerequisites)
 - [Installing](#installing)
@@ -27,7 +27,7 @@ Pre written contexts, [Behatch](https://github.com/Behatch/contexts) are availab
 
 ## Prerequisites
 
-To install those tools, you will need :
+To install those tools, you will need:
 - PHP library
     - [local](https://www.php.net/downloads.php)
     - from a Docker container
@@ -38,11 +38,12 @@ To install those tools, you will need :
 
 ### Behat
 
-Install behat for developement environment
+Install behat for development environment
 
 ``` shell
 composer req behat/behat --dev
 ```
+
 ### Behat Mink
 
 [Mink](http://mink.behat.org) is an open source browser emulator for web applications. It is used to simulate the interaction between browser and our REST API application to check if it works correctly when running tests.
@@ -98,13 +99,13 @@ composer req behat/mink-browserkit-driver --dev
 
 - Additional services for Behat (*Mink*, *Sessions*, *Drivers*).
 - *Behat\MinkExtension\Context\MinkAwareContext* which provides Mink instance for your contexts.
-- Base *Behat\MinkExtension\Context\MinkContext* context which provides base step definitions and hooks for your contexts or subcontexts. Or it could be even used as context on its own.
+- Base *Behat\MinkExtension\Context\MinkContext* context which provides base step definitions and hooks for your contexts or sub-contexts. Or it could be even used as context on its own.
 
 ``` shell
 composer req behat/mink-extension --dev
 ```
 
-And adjust the Behat config file :
+And adjust the Behat config file:
 
 ``` yml
 # behat.yml
@@ -136,7 +137,7 @@ It requires Mink and Mink Extension to be installed.
 composer req behatch/contexts --dev
 ```
 
-In `behat.yml.dist`file enable installed Behatch Contexts. In this case, `behatch:context:json` and `behatch:context:rest` context will be used to test JSON REST API. Also, `Behatch\Extension` extension should be activated :
+In `behat.yml.dist`file enable installed Behatch Contexts. In this case, `behatch:context:json` and `behatch:context:rest` context will be used to test JSON REST API. Also, `Behatch\Extension` extension should be activated:
 
 ``` yml
 # behat.yml
@@ -166,7 +167,7 @@ default:
 
 ### Write your tests
 
-You wan now write your features. Example :
+You wan now write your features. Example:
 
 ``` gherkin
 # features/books.feature
@@ -201,7 +202,7 @@ For this purpose, you can use [Doctrine fixtures bundle](https://symfony.com/doc
 composer require --dev doctrine/doctrine-fixtures-bundle
 ```
 
-Write a loader following the official [documentation](https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html#writing-fixtures) :
+Write a loader following the official [documentation](https://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html#writing-fixtures):
 
 ``` php
 // src/DataFixtures/AppFixtures.php
@@ -228,7 +229,7 @@ class AppFixtures extends Fixture
 }
 ```
 
-Update file `features/bootstrap/FeatureContext.php` :
+Update file `features/bootstrap/FeatureContext.php`:
 
 ``` php
 // features/bootstrap/FeatureContext.php
@@ -305,13 +306,13 @@ docker-compose exec backend vendor/behat/behat/bin/behat --config behat.yml.dist
 
 It is possible to generate a text report by adding those parameters to the command `--format pretty --out report.txt`
 
-**Avec PHP Local**
+**Using local PHP**
 
 ``` shell
 php vendor/behat/behat/bin/behat --format pretty --out report.txt --config behat.yml.dist features/
 ```
 
-**avec Docker**
+**Using Docker**
 
 ```PowerShell
 docker-compose exec backend vendor/behat/behat/bin/behat --format pretty --out report.txt --config behat.yml.dist features/
@@ -327,7 +328,7 @@ It is possible to generate a report with [BehatHtmlFormatterPlugin](https://gith
 composer require --dev emuse/behat-html-formatter
 ```
 
-Edit configuration :
+Edit configuration:
 
 ``` yml
 # behat.yml.dist
@@ -352,6 +353,6 @@ default:
       loop_break: true
 ```
 
-Report example :
+Report example:
 
 ![Rapport](https://camo.githubusercontent.com/6e52f9aa08aa2b597928724f22644169b58aab09/687474703a2f2f692e696d6775722e636f6d2f6f307a437169422e706e67)

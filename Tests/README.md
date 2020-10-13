@@ -1,13 +1,13 @@
 # Tests
 
-**Sommaire**
+**Summary**
 
 - [Prerequisites](#prerequisites)
 - [Test tools](#test-tools)
 
 ## Prerequisites
 
-To install those tools, you will need :
+To install those tools, you will need:
 - PHP library
     - [local](https://www.php.net/downloads.php)
     - from a Docker container
