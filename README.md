@@ -4,12 +4,12 @@
 
 A clean code should follow theses rules:
 
-- documented ([PHPDOC](https://fr.wikipedia.org/wiki/PHPDoc))
-- simple ([KISS](https://fr.wikipedia.org/wiki/Principe_KISS))
-- well structured ([SOLID](https://fr.wikipedia.org/wiki/SOLID_(informatique)))
-- only what is necessary ([YAGNI](https://fr.wikipedia.org/wiki/YAGNI))
-- no duplicated code ([DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas))
-- tested ([TU](https://fr.wikipedia.org/wiki/Test_unitaire))
+- documented ([PHPDOC](https://en.wikipedia.org/wiki/PHPDoc))
+- simple ([KISS](https://en.wikipedia.org/wiki/KISS_principle))
+- well structured ([SOLID](https://en.wikipedia.org/wiki/SOLID))
+- only what is necessary ([YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it))
+- no duplicated code ([DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
+- tested ([TU](https://en.wikipedia.org/wiki/Unit_testing))
 
 To help you achieve this goal, you can use several tools. See:
 

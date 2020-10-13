@@ -1,16 +1,18 @@
 ![Behat](https://github.com/Behat/logo/raw/master/logo.png)
 
 Behat is a functional (end-to-end) test framework.
-Based on [Behaviour Driven Design](https://fr.wikipedia.org/wiki/Programmation_pilot%C3%A9e_par_le_comportement), with tests written in [Gherkin](https://cucumber.io/docs/gherkin/) and contexts (steps) written in PHP.
+Based on [Behaviour Driven Design](https://en.wikipedia.org/wiki/Behavior-driven_development), with tests written in [Gherkin](https://cucumber.io/docs/gherkin/) and contexts (steps) written in PHP.
 
 Tests are written according to the GWT (Given-When-Then) pattern.
 
 Pre written contexts, [Behatch](https://github.com/Behatch/contexts) are available.
 
+[See full documentation](https://docs.behat.org/en/latest/)
+
 **Summary**
 
 - [Prerequisites](#prerequisites)
-- [Installing](#installing)
+- [Install](#install)
     - [Behat](#behat)
     - [Behat Mink](#behat-mink)
     - [Behat Symfony2 Extension](#behat-symfony2-extension)
@@ -34,7 +36,7 @@ To install those tools, you will need:
 - [Git](https://git-scm.com/)
 - [Composer](https://getcomposer.org/)
 
-## Installing
+## Install
 
 ### Behat
 
@@ -43,6 +45,8 @@ Install behat for development environment
 ``` shell
 composer req behat/behat --dev
 ```
+
+Composer will install PHP Code Sniffer in `vendor/behat/behat/bin`.
 
 ### Behat Mink
 
@@ -306,6 +310,8 @@ docker-compose exec backend vendor/behat/behat/bin/behat --config behat.yml.dist
 
 It is possible to generate a text report by adding those parameters to the command `--format pretty --out report.txt`
 
+[See documentation](http://behat.org/en/latest/user_guide/command_line_tool/formatting.html)
+
 **Using local PHP**
 
 ``` shell
@@ -317,8 +323,6 @@ php vendor/behat/behat/bin/behat --format pretty --out report.txt --config behat
 ```PowerShell
 docker-compose exec backend vendor/behat/behat/bin/behat --format pretty --out report.txt --config behat.yml.dist features/
 ```
-
-http://behat.org/en/latest/user_guide/command_line_tool/formatting.html
 
 #### HTML report
 
@@ -355,4 +359,4 @@ default:
 
 Report example:
 
-![Rapport](https://camo.githubusercontent.com/6e52f9aa08aa2b597928724f22644169b58aab09/687474703a2f2f692e696d6775722e636f6d2f6f307a437169422e706e67)
+![Report](https://camo.githubusercontent.com/6e52f9aa08aa2b597928724f22644169b58aab09/687474703a2f2f692e696d6775722e636f6d2f6f307a437169422e706e67)
